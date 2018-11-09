@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity implements ItensDashboardFra
 
     @Override
     public void onClick(ItemDashboard item) {
-        //Toast.makeText(this, "Teste", Toast.LENGTH_LONG);
+        Toast.makeText(getApplicationContext(), "Teste", Toast.LENGTH_LONG).show();
     }
 }

@@ -10,6 +10,12 @@ public class ItemDashboard {
         this.descricao = descricao;
     }
 
+
+    @Override
+    public String toString() {
+        return descricao + String.valueOf(qnt);
+    }
+
     public int getQnt() {
         return qnt;
     }

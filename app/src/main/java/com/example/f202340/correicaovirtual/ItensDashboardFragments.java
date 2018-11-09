@@ -32,7 +32,7 @@ public class ItensDashboardFragments extends ListFragment {
         String[] descricoes = getActivity().getResources().getStringArray(R.array.itensDashboard_descricao);
 
         for (int i = 0; i < descricoes.length; i++){
-            ItemDashboard item = new ItemDashboard(Integer.parseInt(qnts[i]), descricoes[i]);
+            ItemDashboard item = new ItemDashboard(i, descricoes[i]);
             adapter.add(item);
         }
 
