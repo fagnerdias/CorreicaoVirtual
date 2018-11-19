@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_dashboard"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="DASHBOARD" />
+    <item android:id="@+id/menu_planejamento"
+        android:title="PLANEJAMENTO" />
+    <item android:id="@+id/menu_execucao"
+        android:title="EXECUÇÃO" />
+    <item android:id="@+id/menu_oficio"
+        android:title="OFÍCIO" />
+
+
+</menu>

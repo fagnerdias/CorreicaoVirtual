@@ -1,4 +1,4 @@
-package com.example.f202340.correicaovirtual;
+package com.example.f202340.correicaovirtual.model;
 
 public class ItemDashboard {
 

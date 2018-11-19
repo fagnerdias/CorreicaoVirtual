@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/Fundo"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.PlanejamentoActivity">
 
 
     <LinearLayout
@@ -66,20 +66,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DASHBOAD"
+        android:text="PLANEJAMENTO"
         android:padding="10dp"
         android:textSize="20dp"
         android:textStyle="bold"
         />
 
-    <fragment
-        android:id="@+id/fragment_itemDashoard"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:name="com.example.f202340.correicaovirtual.fragments.ItensDashboardFragments"
-
-        />
 
 
 
