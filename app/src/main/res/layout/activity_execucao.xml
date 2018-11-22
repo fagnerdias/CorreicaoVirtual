@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/Fundo"
-    tools:context=".activity.PlanejamentoActivity">
+    tools:context=".activity.ExecucaoActivity">
 
 
     <LinearLayout
@@ -66,20 +65,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PLANEJAMENTO"
+        android:text="Execução"
         android:padding="10dp"
         android:textSize="20dp"
         android:textStyle="bold"
         />
 
     <fragment
-        android:id="@+id/fragment_Planejamento"
+        android:id="@+id/fragment_execucao"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:name="com.example.f202340.correicaovirtual.fragments.PlanejamentoFragments"
+        android:name="com.example.f202340.correicaovirtual.fragments.ExecucaoFragments"
 
         />
-
 
 </LinearLayout>
