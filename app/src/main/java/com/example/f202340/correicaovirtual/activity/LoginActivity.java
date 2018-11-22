@@ -1,12 +1,13 @@
 package com.example.f202340.correicaovirtual.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.f202340.correicaovirtual.R;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +16,11 @@ public class Login extends AppCompatActivity {
     }
 
     public void logar(View view){
+        /*
+        Fazer a verificação de usuário
+         */
 
+        Intent dashboardintent =  new Intent(this, MainActivity.class);
+        startActivity(dashboardintent);
     }
 }

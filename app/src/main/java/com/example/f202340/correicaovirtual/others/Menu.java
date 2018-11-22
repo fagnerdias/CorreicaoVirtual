@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.example.f202340.correicaovirtual.R;
 import com.example.f202340.correicaovirtual.activity.ExecucaoActivity;
 import com.example.f202340.correicaovirtual.activity.MainActivity;
+import com.example.f202340.correicaovirtual.activity.OficioActivity;
 import com.example.f202340.correicaovirtual.activity.PlanejamentoActivity;
 
 
@@ -30,7 +31,8 @@ public class Menu {
                 context.startActivity(execucaoIntent);
                 return true;
             case R.id.menu_oficio:
-                Toast.makeText(context, "TESTE", Toast.LENGTH_SHORT).show();
+                Intent oficioIntent =  new Intent(context, OficioActivity.class);
+                context.startActivity(oficioIntent);
                 return true;
             case R.id.menu_planejamento:
                 Intent intent =  new Intent(context, PlanejamentoActivity.class);

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.ExecucaoActivity">
+    android:background="@color/Fundo"
+    tools:context=".activity.OficioActivity">
 
 
     <LinearLayout
@@ -13,7 +14,6 @@
         android:layout_height="90dp"
         android:background="@color/Cabecalho"
         android:orientation="horizontal">
-
 
 
         <ImageView
@@ -48,8 +48,6 @@
                 android:textSize="15dp" />
 
 
-
-
         </LinearLayout>
 
         <ImageButton
@@ -61,24 +59,22 @@
             android:background="@color/Cabecalho"/>
 
 
-
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Execução"
         android:padding="10dp"
+        android:text="OFÍCIOS"
         android:textSize="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <fragment
-        android:id="@+id/fragment_execucao"
+        android:id="@+id/fragment_oficio"
+        android:name="com.example.f202340.correicaovirtual.fragments.OficioFragments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:name="com.example.f202340.correicaovirtual.fragments.ExecucaoFragments"
 
         />
 
