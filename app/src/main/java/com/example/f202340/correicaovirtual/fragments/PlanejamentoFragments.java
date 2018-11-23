@@ -35,7 +35,7 @@ public class PlanejamentoFragments extends ListFragment {
         String[] descricoes = getActivity().getResources().getStringArray(R.array.itensDashboard_descricao);
 
         for (int i = 0; i < descricoes.length; i++){
-            Planejamento planejamento = new Planejamento(descricoes[i]);
+            Planejamento planejamento = new Planejamento(descricoes[i], descricoes[i]);
             adapter.add(planejamento);
         }
 
