@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -38,7 +39,7 @@ public class ItensDashboardFragments extends ListFragment {
             ItemDashboard item = new ItemDashboard(i, descricoes[i]);
             adapter.add(item);
         }
-
+        Log.i("MyApp", "onCreate: Fragment ");
         setListAdapter(adapter);
     }
 
@@ -46,6 +47,7 @@ public class ItensDashboardFragments extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         ItemDashboard item = adapter.getItem(position);
         if(listener != null){
+            Log.i("MyApp", "OnListItemClick: Fragment ");
             listener.onClick(item);
         }
     }

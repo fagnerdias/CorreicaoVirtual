@@ -3,6 +3,8 @@ package com.example.f202340.correicaovirtual.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
@@ -20,6 +22,10 @@ public class MainActivity extends AppCompatActivity implements ItensDashboardFra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        Log.i("MyApp", "onCreate dashboard Activity ");
+
     }
 
     public void showPopup(View view){
@@ -30,18 +36,17 @@ public class MainActivity extends AppCompatActivity implements ItensDashboardFra
     }
 
 
-    @Override
-    public void onClick(ItemDashboard item) {
-        /*
-        Click no item dentro do fragment list
-         */
-        Toast.makeText(getApplicationContext(), "Teste", Toast.LENGTH_LONG).show();
-    }
+
 
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         Menu menu = new Menu(item);
         return menu.popupManu(this);
+    }
+
+    @Override
+    public void onClick(ItemDashboard item) {
+        Log.i("MyApp", "OnListItemClick: dashboard Activity ");
     }
 }

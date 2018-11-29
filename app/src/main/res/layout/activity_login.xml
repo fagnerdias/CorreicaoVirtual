@@ -18,7 +18,7 @@
         android:src="@drawable/logo"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edtLogin"
         android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         android:hint="Login" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edtSenha"
         android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

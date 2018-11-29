@@ -8,6 +8,10 @@
     android:background="@color/Fundo"
     tools:context=".activity.MainActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,15 +54,6 @@
 
 
         </LinearLayout>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:onClick="showPopup"
-            android:src="@drawable/baseline_menu_black_18dp"
-            android:background="@color/Cabecalho"/>
-
 
 
     </LinearLayout>
