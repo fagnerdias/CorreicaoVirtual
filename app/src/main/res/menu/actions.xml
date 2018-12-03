@@ -11,6 +11,8 @@
         android:title="EXECUÇÃO" />
     <item android:id="@+id/menu_oficio"
         android:title="OFÍCIO" />
+    <item android:id="@+id/menu_sair"
+        android:title="SAIR" />
 
 
 </menu>
