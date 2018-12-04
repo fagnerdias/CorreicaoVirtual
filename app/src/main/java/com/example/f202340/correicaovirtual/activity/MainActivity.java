@@ -1,6 +1,7 @@
 package com.example.f202340.correicaovirtual.activity;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.example.f202340.correicaovirtual.R;
 import com.example.f202340.correicaovirtual.fragments.ItensDashboardFragments;
 import com.example.f202340.correicaovirtual.model.ItemDashboard;
+import com.example.f202340.correicaovirtual.others.AuthClass;
 import com.example.f202340.correicaovirtual.others.Menu;
 
 public class MainActivity extends AppCompatActivity implements ItensDashboardFragments.OnItemClick, PopupMenu.OnMenuItemClickListener{
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements ItensDashboardFra
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Log.i("MyApp", "onCreate dashboard Activity ");
+
 
     }
 
@@ -35,18 +37,21 @@ public class MainActivity extends AppCompatActivity implements ItensDashboardFra
         popupMenu.show();
     }
 
-
-
-
-
     @Override
     public boolean onMenuItemClick(MenuItem item) {
+        AuthClass auth = AuthClass.getInstance();
+        switch (item.getItemId()){
+            case R.id.menu_sair:
+                auth.getAuth().signOut();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                finish();
+        }
         Menu menu = new Menu(item);
         return menu.popupManu(this);
     }
 
     @Override
     public void onClick(ItemDashboard item) {
-        Log.i("MyApp", "OnListItemClick: dashboard Activity ");
+        Toast.makeText(this, "TESTE", Toast.LENGTH_SHORT).show();
     }
 }

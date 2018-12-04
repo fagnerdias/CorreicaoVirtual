@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
@@ -13,6 +14,7 @@ import com.example.f202340.correicaovirtual.R;
 
 import com.example.f202340.correicaovirtual.fragments.ExecucaoFragments;
 import com.example.f202340.correicaovirtual.model.Execucao;
+import com.example.f202340.correicaovirtual.others.AuthClass;
 import com.example.f202340.correicaovirtual.others.Menu;
 
 public class ExecucaoActivity extends AppCompatActivity implements ExecucaoFragments.OnItemClick, PopupMenu.OnMenuItemClickListener {
@@ -37,6 +39,13 @@ public class ExecucaoActivity extends AppCompatActivity implements ExecucaoFragm
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
+        AuthClass auth = AuthClass.getInstance();
+        switch (item.getItemId()){
+            case R.id.menu_sair:
+                auth.getAuth().signOut();
+                startActivity(new Intent(ExecucaoActivity.this, LoginActivity.class));
+                finish();
+        }
         Menu menu = new Menu(item);
         return menu.popupManu(this);
     }

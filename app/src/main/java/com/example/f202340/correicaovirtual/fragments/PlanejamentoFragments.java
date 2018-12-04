@@ -22,6 +22,7 @@ public class PlanejamentoFragments extends ListFragment {
         if (!(context instanceof PlanejamentoFragments.OnItemClick)){
             throw new RuntimeException("O contexto deve ser OnItemClick");
         }
+        this.listener = (OnItemClick) context;
 
     }
 

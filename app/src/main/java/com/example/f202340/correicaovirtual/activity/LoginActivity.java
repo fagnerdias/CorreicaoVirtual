@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.f202340.correicaovirtual.R;
+import com.example.f202340.correicaovirtual.others.AuthClass;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -33,31 +34,37 @@ public class LoginActivity extends AppCompatActivity {
         edtSenha = findViewById(R.id.edtSenha);
 
         auth = FirebaseAuth.getInstance();
+
+        AuthClass authSingleton = AuthClass.getInstance();
+        authSingleton.setAuth(auth);
+
     }
 
     public void logar(View view) {
-        Log.i("MyApp", "logar: ENTRA");
+
         String login = edtLogin.getText().toString().trim();
-        String senha = edtSenha.getText().toString();
-        Log.i("MyApp", "logar: ENTRA222222");
+        String senha = edtSenha.getText().toString().trim();
 
-        auth.signInWithEmailAndPassword(login, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        if (login.equals("") || senha.equals("")){
+            Toast.makeText(this, "Erro ao tentar logar", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            auth.signInWithEmailAndPassword(login, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                Log.i("MyApp", "logar: ENTRA");
-                if (task.isSuccessful()) {
-                    Log.i("MyApp", "logar: ENTRA");
-                    Toast.makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
-                } else {
-                    Log.i("MyApp", "logar: ENTRA - else");
-                    Toast.makeText(LoginActivity.this, "Error ao tentar logar", Toast.LENGTH_SHORT).show();
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Log.i("MyApp", "logar: ENTRA");
+                        Toast
+                                .makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Error ao tentar logar", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
-
+            });
+        }
 
     }
 

@@ -21,7 +21,7 @@ public class OficioFragments extends ListFragment {
         if (!(context instanceof OnItemClick)){
             throw new RuntimeException("O contexto deve ser OnItemClick");
         }
-
+        this.listener = (OnItemClick) context;
     }
 
     @Override

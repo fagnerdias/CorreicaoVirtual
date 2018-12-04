@@ -1,8 +1,10 @@
 package com.example.f202340.correicaovirtual.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import com.example.f202340.correicaovirtual.R;
 import com.example.f202340.correicaovirtual.fragments.OficioFragments;
 import com.example.f202340.correicaovirtual.model.Oficio;
+import com.example.f202340.correicaovirtual.others.AuthClass;
 import com.example.f202340.correicaovirtual.others.Menu;
 
 public class OficioActivity extends AppCompatActivity implements OficioFragments.OnItemClick, PopupMenu.OnMenuItemClickListener {
@@ -44,6 +47,13 @@ public class OficioActivity extends AppCompatActivity implements OficioFragments
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
+        AuthClass auth = AuthClass.getInstance();
+        switch (item.getItemId()){
+            case R.id.menu_sair:
+                auth.getAuth().signOut();
+                startActivity(new Intent(OficioActivity.this, LoginActivity.class));
+                finish();
+        }
         Menu menu = new Menu(item);
         return menu.popupManu(this);
     }
