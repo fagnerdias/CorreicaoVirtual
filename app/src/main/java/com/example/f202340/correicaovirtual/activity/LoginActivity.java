@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.f202340.correicaovirtual.R;
+import com.example.f202340.correicaovirtual.dialog.DialogSimple;
 import com.example.f202340.correicaovirtual.others.AuthClass;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -46,7 +47,9 @@ public class LoginActivity extends AppCompatActivity {
         String senha = edtSenha.getText().toString().trim();
 
         if (login.equals("") || senha.equals("")){
-            Toast.makeText(this, "Erro ao tentar logar", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Erro ao tentar logar", Toast.LENGTH_SHORT).show();
+            DialogSimple dialog = new DialogSimple();
+            dialog.show(getSupportFragmentManager(), "Error ao logar");
         }
         else {
             auth.signInWithEmailAndPassword(login, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
